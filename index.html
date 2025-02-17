@@ -611,31 +611,35 @@
                             View on Google Maps
                         </a>
                     </small>
-<!-- Quick Contact Buttons -->
-<div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-    <p class="mb-3 text-center">Contact us instantly through Facebook or Email.</p>
-    <a href="https://www.facebook.com/iRepairGadgetz2022" target="_blank" class="btn btn-primary w-75 mb-2">
-        <i class="fab fa-facebook-messenger me-2"></i> Message on Facebook
-    </a>
-    <a id="email-link" class="btn btn-danger w-75">
-        <i class="fa fa-envelope me-2"></i> Send an Email
-    </a>
+                </div>
 
-    <script>
-    document.getElementById("email-link").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default behavior
 
-        // Mobile check
-        if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-            // Open email app (Gmail, Outlook, etc.)
-            window.location.href = "mailto:IRepairGadgetz2022@gmail.com?subject=Inquiry";
-        } else {
-            // Desktop: Open Gmail in a new tab
-            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=IRepairGadgetz2022@gmail.com&su=Inquiry", "_blank");
-        }
-    });
-    </script>
-</div>
+                <!-- Quick Contact Buttons -->
+                <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                    <p class="mb-3 text-center">Contact us instantly through Facebook or Email.</p>
+                    <a href="https://www.facebook.com/iRepairGadgetz2022" target="_blank"
+                        class="btn btn-primary w-75 mb-2">
+                        <i class="fab fa-facebook-messenger me-2"></i> Message on Facebook
+                    </a>
+                    <a id="email-link" class="btn btn-danger w-75">
+                        <i class="fa fa-envelope me-2"></i> Send an Email
+                    </a>
+                    
+                    <script>
+                    document.getElementById("email-link").addEventListener("click", function(event) {
+                        event.preventDefault(); // Prevent default behavior
+                    
+                        if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
+                            // Mobile: Open email app (Gmail, Outlook, etc.)
+                            window.location.href = "mailto:IRepairGadgetz2022@gmail.com?subject=Inquiry";
+                        } else {
+                            // Desktop: Open Gmail in a new tab
+                            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=IRepairGadgetz2022@gmail.com&su=Inquiry", "_blank");
+                        }
+                    });
+                    </script>
+                    
+                </div>
             </div>
         </div>
     </div>

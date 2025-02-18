@@ -390,10 +390,15 @@ html {
 
 
 .team-image {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
 .team-image:hover {
-    transform: scale(1.1); /* Zoom in */
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+/* Optional: Ensure the image remains sharp */
+.team-item img {
+    object-fit: cover;
 }
 

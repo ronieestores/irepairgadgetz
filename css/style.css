@@ -176,17 +176,6 @@
         height: 100%;
         object-fit: cover;
     }
-
-    .container-xxl {
-        background-color: white !important;
-    }
-    .team-item,
-    .team-item .bg-light {
-        background-color: white !important;
-        opacity: 1 !important;
-        filter: none !important;
-    }
-    
 }
 
 .page-header {

@@ -63,10 +63,10 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').scrollTop(0); // Instantly move to the top
         return false;
     });
-
+    
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({

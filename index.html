@@ -296,19 +296,34 @@
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
                         let counterElement = document.getElementById("recommendation-counter");
-                        let count = 0;
-                        let target = 100; // Target number
-                        let speed = 20; // Speed of counting
 
-                        function updateCounter() {
-                            if (count < target) {
-                                count++;
-                                counterElement.innerHTML = count + "%"; // Keeps % while counting
-                                setTimeout(updateCounter, speed);
+                        // Wait for the element to be visible in the DOM
+                        function waitForElement() {
+                            if (!counterElement || counterElement.offsetParent === null) {
+                                setTimeout(waitForElement, 100);
+                            } else {
+                                startCounter();
                             }
                         }
-                        updateCounter();
+
+                        function startCounter() {
+                            let count = 0;
+                            let target = 100; // Target number
+                            let speed = 20; // Speed of counting
+
+                            function updateCounter() {
+                                if (count < target) {
+                                    count++;
+                                    counterElement.innerHTML = count + "%";
+                                    setTimeout(updateCounter, speed);
+                                }
+                            }
+                            updateCounter();
+                        }
+
+                        waitForElement();
                     });
+
                 </script>
 
 

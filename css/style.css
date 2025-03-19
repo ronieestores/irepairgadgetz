@@ -544,4 +544,10 @@ html {
 
 
 
-  
+  .testimonial-text p {
+    text-align: justify;
+}
+
+.owl-carousel {
+    touch-action: pan-y;
+}

@@ -566,3 +566,9 @@ html {
 }
 
 
+#contactus-section {
+    min-height: 100vh;  /* Make the contact section fill the whole screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

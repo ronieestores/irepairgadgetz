@@ -990,22 +990,18 @@
         });
 
 
-document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
     function scrollToSection(sectionId) {
         const section = document.querySelector(sectionId);
         if (!section) return;
 
         const navbar = document.querySelector("nav");
-        let navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-        // Adjust extra padding for mobile view
-        const isMobile = window.innerWidth < 768; 
-        const extraOffset = isMobile ? 10 : 0; // Small adjustment for mobile scrolling
-
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
         const sectionPadding = parseInt(window.getComputedStyle(section).paddingTop) || 0;
         const sectionMargin = parseInt(window.getComputedStyle(section).marginTop) || 0;
 
-        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin - extraOffset;
+        // Ensure exact section top visibility
+        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin;
 
         window.scrollTo({
             top: scrollPosition > 0 ? scrollPosition : 0, // Prevent negative scroll
@@ -1047,7 +1043,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
 
 
         jQuery.event.special.touchstart = {

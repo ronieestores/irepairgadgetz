@@ -990,60 +990,59 @@
         });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    function scrollToSection(sectionId) {
-        const section = document.querySelector(sectionId);
-        if (!section) return;
+        document.addEventListener("DOMContentLoaded", function () {
+            function scrollToSection(sectionId) {
+                const section = document.querySelector(sectionId);
+                if (!section) return;
 
-        const navbar = document.querySelector("nav");
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-        const sectionPadding = parseInt(window.getComputedStyle(section).paddingTop) || 0;
-        const sectionMargin = parseInt(window.getComputedStyle(section).marginTop) || 0;
+                const navbarHeight = document.querySelector("nav").offsetHeight;
+                const sectionMargin = parseInt(window.getComputedStyle(section).marginTop);
 
-        // Ensure exact section top visibility
-        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin;
+                window.scrollTo({
+                    top: section.offsetTop - navbarHeight - sectionMargin,
+                    behavior: "smooth"
+                });
 
-        window.scrollTo({
-            top: scrollPosition > 0 ? scrollPosition : 0, // Prevent negative scroll
-            behavior: "smooth"
+                closeNavbar(); // Close navbar after scrolling
+            }
+
+            // Scroll to Home (Top of Page) and Close Navbar
+            document.querySelector(".nav-item.nav-link.active").addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default page reload
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+                closeNavbar(); // Close navbar after scrolling
+            });
+
+            document.querySelector("#services-link").addEventListener("click", function (event) {
+                event.preventDefault();
+                scrollToSection("#services-section");
+            });
+
+            document.querySelector("#aboutus-link").addEventListener("click", function (event) {
+                event.preventDefault();
+                scrollToSection("#aboutus");
+            });
+
+            document.querySelector("#contactus-link").addEventListener("click", function (event) {
+                event.preventDefault();
+                scrollToSection("#contactus-section");
+            });
+
+            function closeNavbar() {
+                const navbarToggler = document.querySelector(".navbar-toggler");
+                const navbarCollapse = document.querySelector("#navbarCollapse");
+
+                if (window.innerWidth < 992) { // Close only on mobile
+                    navbarCollapse.classList.remove("show");
+                    navbarToggler.classList.add("collapsed");
+                }
+            }
         });
-
-        closeNavbar(); // Close navbar after scrolling
-    }
-
-    // Function to handle link clicks
-    function handleNavClick(event, sectionId) {
-        event.preventDefault();
-        scrollToSection(sectionId);
-    }
-
-    document.querySelector("#services-link").addEventListener("click", function (event) {
-        handleNavClick(event, "#services-section");
-    });
-
-    document.querySelector("#aboutus-link").addEventListener("click", function (event) {
-        handleNavClick(event, "#aboutus");
-    });
-
-    document.querySelector("#contactus-link").addEventListener("click", function (event) {
-        handleNavClick(event, "#contactus-section");
-    });
-
-    document.querySelector(".nav-item.nav-link.active").addEventListener("click", function (event) {
-        handleNavClick(event, "body");
-    });
-
-    function closeNavbar() {
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector("#navbarCollapse");
-
-        if (window.innerWidth < 992) { // Close only on mobile
-            navbarCollapse.classList.remove("show");
-            navbarToggler.classList.add("collapsed");
-        }
-    }
-});
-
 
         jQuery.event.special.touchstart = {
             setup: function (_, ns, handle) {

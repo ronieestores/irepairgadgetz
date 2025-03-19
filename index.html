@@ -996,12 +996,16 @@
         if (!section) return;
 
         const navbar = document.querySelector("nav");
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        let navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+        // Adjust extra padding for mobile view
+        const isMobile = window.innerWidth < 768; 
+        const extraOffset = isMobile ? 10 : 0; // Small adjustment for mobile scrolling
+
         const sectionPadding = parseInt(window.getComputedStyle(section).paddingTop) || 0;
         const sectionMargin = parseInt(window.getComputedStyle(section).marginTop) || 0;
 
-        // Ensure exact section top visibility
-        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin;
+        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin - extraOffset;
 
         window.scrollTo({
             top: scrollPosition > 0 ? scrollPosition : 0, // Prevent negative scroll
@@ -1043,6 +1047,7 @@
         }
     }
 });
+
 
 
         jQuery.event.special.touchstart = {

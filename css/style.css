@@ -566,11 +566,3 @@ html {
 }
 
 
-.col-lg-6 p {
-    text-align: justify;
-}
-
-.col-lg-6 h6,
-.col-lg-6 span {
-    text-align: left;
-}

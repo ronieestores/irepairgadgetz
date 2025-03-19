@@ -117,14 +117,20 @@ $(document).ready(function(){
         smartSpeed: 600,
         margin: 30,
         autoHeight: false,
-        mouseDrag: false, // Prevents conflict with touch gestures
-        touchDrag: true,  // Ensures touch gestures work properly
-        pullDrag: true,
+        mouseDrag: false, // Prevent mouse drag issues
+        touchDrag: true,  // Enable touch gestures
+        pullDrag: true, 
         responsive: {
             0: { items: 1 },
             768: { items: 2 },
             1024: { items: 3 }
         }
+    }).on("drag.owl.carousel", function(event) {
+        // When user touches the slider, pause autoplay
+        $(this).trigger("stop.owl.autoplay");
+    }).on("translated.owl.carousel", function(event) {
+        // Restart autoplay after user interaction
+        $(this).trigger("play.owl.autoplay", [5000]);
     });
     
 

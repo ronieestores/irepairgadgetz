@@ -446,9 +446,6 @@ html {
     height: 100%;
 }
 
-
-
-  
   .testimonial-carousel .testimonial-item {
     display: flex;
     flex-direction: column;
@@ -483,9 +480,8 @@ html {
 
 /* CSS */
 .button-80 {
-    display: block;
-    background: #fff !important;
-    backface-visibility: hidden !important;
+    background: #fff;
+    backface-visibility: hidden;
     border-radius: .375rem;
     border-style: solid;
     border-width: .125rem;

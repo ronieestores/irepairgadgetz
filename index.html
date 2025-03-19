@@ -307,35 +307,38 @@
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
                         let counterElement = document.getElementById("recommendation-counter");
-
-                        // Wait for the element to be visible in the DOM
-                        function waitForElement() {
-                            if (!counterElement || counterElement.offsetParent === null) {
-                                setTimeout(waitForElement, 100);
-                            } else {
-                                startCounter();
-                            }
-                        }
-
+                        let hasCounted = false; // Prevent multiple triggers
+                
                         function startCounter() {
                             let count = 0;
-                            let target = 100; // Target number
-                            let speed = 20; // Speed of counting
-
+                            let target = 100; // Target percentage
+                            let duration = 2000; // Total animation time (2 seconds)
+                            let interval = Math.round(duration / target);
+                
                             function updateCounter() {
                                 if (count < target) {
                                     count++;
                                     counterElement.innerHTML = count + "%";
-                                    setTimeout(updateCounter, speed);
+                                    setTimeout(updateCounter, interval);
                                 }
                             }
                             updateCounter();
                         }
-
-                        waitForElement();
+                
+                        // Observe when the section becomes visible
+                        let observer = new IntersectionObserver(entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting && !hasCounted) {
+                                    hasCounted = true; // Ensure it runs only once
+                                    startCounter();
+                                }
+                            });
+                        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+                
+                        observer.observe(counterElement);
                     });
-
                 </script>
+                
 
 
             </div>

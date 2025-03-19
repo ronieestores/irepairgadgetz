@@ -990,28 +990,32 @@
         });
 
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     function scrollToSection(sectionId) {
         const section = document.querySelector(sectionId);
         if (!section) return;
 
         const navbar = document.querySelector("nav");
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        let navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-        // Use scrollIntoView with smooth scrolling and top alignment
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start" // Ensures the section starts exactly at the top
+        // Adjust extra padding for mobile view
+        const isMobile = window.innerWidth < 768; 
+        const extraOffset = isMobile ? 10 : 0; // Small adjustment for mobile scrolling
+
+        const sectionPadding = parseInt(window.getComputedStyle(section).paddingTop) || 0;
+        const sectionMargin = parseInt(window.getComputedStyle(section).marginTop) || 0;
+
+        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin - extraOffset;
+
+        window.scrollTo({
+            top: scrollPosition > 0 ? scrollPosition : 0, // Prevent negative scroll
+            behavior: "smooth"
         });
-
-        // Add small delay to adjust for navbar height (fixes mobile issue)
-        setTimeout(() => {
-            window.scrollBy(0, -navbarHeight);
-        }, 300);
 
         closeNavbar(); // Close navbar after scrolling
     }
 
+    // Function to handle link clicks
     function handleNavClick(event, sectionId) {
         event.preventDefault();
         scrollToSection(sectionId);
@@ -1043,7 +1047,6 @@
         }
     }
 });
-
 
 
 

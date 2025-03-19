@@ -80,7 +80,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-secondary"><i class="bi bi-cpu-fill"></i> </i>i-RepairGadgetz</h2>
+            <h2 class="m-0 text-secondary"><i class="bi bi-cpu-fill"></i> i-RepairGadgetz</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -90,13 +90,13 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="#" class="nav-item nav-link" id="aboutus-link">About Us</a>
                 <a href="#" class="nav-item nav-link" id="services-link">Services</a>
-
                 <a href="#" class="nav-item nav-link" id="contactus-link">Location</a>
             </div>
-            <a href="https://www.facebook.com/iRepairGadgetz2022" target="_blank"
-                class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block">
-                <i class="fab fa-facebook-messenger me-2"></i> Message Us on Facebook
-            </a>
+            <a href="https://www.facebook.com/iRepairGadgetz2022" target="_blank" rel="noopener noreferrer"
+            class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block" aria-label="Chat with us on Facebook Messenger">
+            <i class="fab fa-facebook-messenger me-2"></i> Chat with us on Facebook
+        </a>
+        
 
         </div>
     </nav>
@@ -991,58 +991,59 @@
 
 
         document.addEventListener("DOMContentLoaded", function () {
-            function scrollToSection(sectionId) {
-                const section = document.querySelector(sectionId);
-                if (!section) return;
+    function scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        if (!section) return;
 
-                const navbarHeight = document.querySelector("nav").offsetHeight;
-                const sectionMargin = parseInt(window.getComputedStyle(section).marginTop);
+        const navbar = document.querySelector("nav");
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const sectionPadding = parseInt(window.getComputedStyle(section).paddingTop) || 0;
+        const sectionMargin = parseInt(window.getComputedStyle(section).marginTop) || 0;
 
-                window.scrollTo({
-                    top: section.offsetTop - navbarHeight - sectionMargin,
-                    behavior: "smooth"
-                });
+        // Ensure exact section top visibility
+        const scrollPosition = section.offsetTop - navbarHeight - sectionPadding - sectionMargin;
 
-                closeNavbar(); // Close navbar after scrolling
-            }
-
-            // Scroll to Home (Top of Page) and Close Navbar
-            document.querySelector(".nav-item.nav-link.active").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent default page reload
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-                closeNavbar(); // Close navbar after scrolling
-            });
-
-            document.querySelector("#services-link").addEventListener("click", function (event) {
-                event.preventDefault();
-                scrollToSection("#services-section");
-            });
-
-            document.querySelector("#aboutus-link").addEventListener("click", function (event) {
-                event.preventDefault();
-                scrollToSection("#aboutus");
-            });
-
-            document.querySelector("#contactus-link").addEventListener("click", function (event) {
-                event.preventDefault();
-                scrollToSection("#contactus-section");
-            });
-
-            function closeNavbar() {
-                const navbarToggler = document.querySelector(".navbar-toggler");
-                const navbarCollapse = document.querySelector("#navbarCollapse");
-
-                if (window.innerWidth < 992) { // Close only on mobile
-                    navbarCollapse.classList.remove("show");
-                    navbarToggler.classList.add("collapsed");
-                }
-            }
+        window.scrollTo({
+            top: scrollPosition > 0 ? scrollPosition : 0, // Prevent negative scroll
+            behavior: "smooth"
         });
+
+        closeNavbar(); // Close navbar after scrolling
+    }
+
+    // Function to handle link clicks
+    function handleNavClick(event, sectionId) {
+        event.preventDefault();
+        scrollToSection(sectionId);
+    }
+
+    document.querySelector("#services-link").addEventListener("click", function (event) {
+        handleNavClick(event, "#services-section");
+    });
+
+    document.querySelector("#aboutus-link").addEventListener("click", function (event) {
+        handleNavClick(event, "#aboutus");
+    });
+
+    document.querySelector("#contactus-link").addEventListener("click", function (event) {
+        handleNavClick(event, "#contactus-section");
+    });
+
+    document.querySelector(".nav-item.nav-link.active").addEventListener("click", function (event) {
+        handleNavClick(event, "body");
+    });
+
+    function closeNavbar() {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector("#navbarCollapse");
+
+        if (window.innerWidth < 992) { // Close only on mobile
+            navbarCollapse.classList.remove("show");
+            navbarToggler.classList.add("collapsed");
+        }
+    }
+});
+
 
         jQuery.event.special.touchstart = {
             setup: function (_, ns, handle) {

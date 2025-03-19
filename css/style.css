@@ -546,8 +546,21 @@ html {
 
   .testimonial-text p {
     text-align: justify;
+    -webkit-text-align: justify;
+    word-break: break-word;
 }
 
+
+
 .owl-carousel {
-    touch-action: pan-y;
+    touch-action: auto !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-carousel {
+    overflow: hidden; /* Prevents unwanted overflow issues */
+}
+
+.testimonial-text {
+    pointer-events: none; /* Ensures text doesn’t interfere with touch scrolling */
 }

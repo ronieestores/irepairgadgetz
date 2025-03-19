@@ -116,13 +116,17 @@ $(document).ready(function(){
         autoplayTimeout: 5000,
         smartSpeed: 600,
         margin: 30,
-        autoHeight: false, // Disable auto height so we can manually equalize
+        autoHeight: false,
+        mouseDrag: false, // Prevents conflict with touch gestures
+        touchDrag: true,  // Ensures touch gestures work properly
+        pullDrag: true,
         responsive: {
             0: { items: 1 },
             768: { items: 2 },
             1024: { items: 3 }
         }
     });
+    
 
     // Function to equalize the heights of all items
     function equalizeHeights() {

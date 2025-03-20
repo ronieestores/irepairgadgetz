@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta name="color-scheme" content="light dark">
     <meta name="google-site-verification" content="5aLGh3YL4ZwloxF-mDP4wC3Qvl8SJOzAjuOafTr0pRU" />
     <!-- Favicon -->
     <link href="img/icon.jpg" rel="icon">
@@ -93,10 +94,11 @@
                 <a href="#" class="nav-item nav-link" id="contactus-link">Location</a>
             </div>
             <a href="https://www.facebook.com/iRepairGadgetz2022" target="_blank" rel="noopener noreferrer"
-            class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block" aria-label="Chat with us on Facebook Messenger">
-            <i class="fab fa-facebook-messenger me-2"></i> Chat with us on Facebook
-        </a>
-        
+                class="btn btn-secondary py-4 px-lg-5 d-none d-lg-block"
+                aria-label="Chat with us on Facebook Messenger">
+                <i class="fab fa-facebook-messenger me-2"></i> Chat with us on Facebook
+            </a>
+
 
         </div>
     </nav>
@@ -221,9 +223,8 @@
                 <div class="col-lg-6">
                     <h6 class="text-secondary text-uppercase">// About Us //</h6>
                     <h1 class="mb-4"><span class="text-secondary">Expert Gadget Repairs</span> You Can Trust</h1>
-                    <p class="mb-4">At i-RepairGadgetz, we provide fast, reliable, and expert gadget repairs to get
-                        your devices back to peak performance. Our skilled technicians use modern tools and professional
-                        techniques to ensure high-quality service.</p>
+                    <p class="mb-4">At i-RepairGadgetz, we deliver fast, reliable, and expert gadget repairs to restore
+                        your device’s peak performance. Trust our skilled technicians for top-quality service!</p>
 
                     <!-- Features with Icons -->
                     <div class="row g-4 mb-3 pb-3">
@@ -235,7 +236,7 @@
                                 </div>
                                 <div class="ps-3">
                                     <h6>Professional & Expert Technicians</h6>
-                                    <span>Skilled and knowledgeable specialists with years of experience in gadget
+                                    <span>Skilled and knowledgeable specialists with 20 years of experience in gadget
                                         repairs.</span>
                                 </div>
                             </div>
@@ -307,13 +308,13 @@
                     document.addEventListener("DOMContentLoaded", function () {
                         let counterElement = document.getElementById("recommendation-counter");
                         let hasCounted = false; // Prevent multiple triggers
-                
+
                         function startCounter() {
                             let count = 0;
                             let target = 100; // Target percentage
                             let duration = 2000; // Total animation time (2 seconds)
                             let interval = Math.round(duration / target);
-                
+
                             function updateCounter() {
                                 if (count < target) {
                                     count++;
@@ -323,7 +324,7 @@
                             }
                             updateCounter();
                         }
-                
+
                         // Observe when the section becomes visible
                         let observer = new IntersectionObserver(entries => {
                             entries.forEach(entry => {
@@ -333,11 +334,11 @@
                                 }
                             });
                         }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
-                
+
                         observer.observe(counterElement);
                     });
                 </script>
-                
+
 
 
             </div>
@@ -595,7 +596,8 @@
                         <h1 class="text-white mb-4">Message Us on Facebook</h1>
                         <p class="text-white">Have questions or need service? Contact us via Facebook Messenger for
                             quick support and inquiries.</p>
-                        <a href="https://www.m.me/iRepairGadgetz2022" target="_blank" class="button-80 w-75 text-center">
+                        <a href="https://www.m.me/iRepairGadgetz2022" target="_blank"
+                            class="button-80 w-75 text-center">
                             <i class="fab fa-facebook-messenger me-2"></i> Chat with Us
                         </a>
 
@@ -930,7 +932,7 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
     <!-- Footer End -->
 
@@ -983,7 +985,7 @@
                 dots: true,
                 autoplay: true,
                 autoplayTimeout: 3000,
-                autoplayHoverPause: true,  
+                autoplayHoverPause: true,
                 mouseDrag: true,
                 touchDrag: false  // 👈 Disables touch dragging to prevent the error
             });

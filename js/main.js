@@ -154,3 +154,6 @@ $(document).ready(function(){
     // Run height adjustment on page load
     $(window).on('load', equalizeHeights);
 });
+
+
+

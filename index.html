@@ -6,7 +6,8 @@
     <title>i-RepairGadgetz</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
-    <meta name="description" content="Fast and reliable gadget repair services! We fix laptops, PCs, smartphones, and gaming consoles. Get expert troubleshooting, hardware upgrades, software activation, and deep cleaning. Contact iRepair Gadgetz for affordable and professional tech repairs today!">
+    <meta name="description"
+        content="Fast and reliable gadget repair services! We fix laptops, PCs, smartphones, and gaming consoles. Get expert troubleshooting, hardware upgrades, software activation, and deep cleaning. Contact iRepair Gadgetz for affordable and professional tech repairs today!">
     <meta name="google-site-verification" content="5aLGh3YL4ZwloxF-mDP4wC3Qvl8SJOzAjuOafTr0pRU" />
     <!-- Favicon -->
     <link href="img/icon.jpg" rel="icon">
@@ -30,7 +31,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,32 +40,60 @@
     <link href="css/style.css" rel="stylesheet">
 
 
-        <!-- JSON-LD Structured Data -->
-        <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "i-RepairGadgetz",
-              "description": "Professional PC/laptop troubleshooting, hardware upgrades, OS installation, and software activation services.",
-              "url": "https://irepairgadgetz.pages.dev/",
-              "image": "https://irepairgadgetz.pages.dev/img/icon.jpg",
-              "telephone": "+63 912-345-6789",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Your Street, City",
-                "addressLocality": "Your City",
-                "addressRegion": "Your Region",
-                "postalCode": "Your Postal Code",
-                "addressCountry": "PH"
-              },
-              "sameAs": [
-                "https://www.facebook.com/yourpage",
-                "https://www.tiktok.com/@youraccount"
-              ],
-              "openingHours": "Mo-Sa 09:00-18:00"
-            }
-            </script>
-            
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            cursor: pointer;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Play Button */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 0, 0, 0.8);
+            /* Red background */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Hover effect */
+        .play-button:hover {
+            background: rgba(200, 0, 0, 1);
+            /* Darker red on hover */
+        }
+
+        /* Play icon */
+        .play-button::after {
+            content: "▶";
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -649,14 +678,11 @@
 
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                     <div class="card border-0 transform-on-hover">
-                        <!-- YouTube Embedded Video -->
-                        <div class="video-container">
-                            <iframe width="100%" height="315"
-                                src="https://www.youtube.com/embed/GkFFdVyBH4s?si=VnrvqT4PLA94wxXN"
-                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                                encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                        <!-- Lazy Loaded YouTube Video -->
+                        <div class="video-container" onclick="loadVideo(this, 'GkFFdVyBH4s')">
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/GkFFdVyBH4s/hqdefault.jpg"
+                                alt="Video Thumbnail">
+                            <div class="play-button"></div>
                         </div>
 
                         <div class="card-body">
@@ -675,16 +701,11 @@
 
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                     <div class="card border-0 transform-on-hover">
-                        <!-- YouTube Embedded Video -->
-                        <div class="video-container">
-                            <iframe width="100%" height="315"
-                                src="https://www.youtube.com/embed/ceEWf4Z0Ipo?si=xmOh7lD8heF8T56V"
-                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                        <!-- Lazy Loaded YouTube Video -->
+                        <div class="video-container" onclick="loadVideo(this, 'ceEWf4Z0Ipo')">
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/ceEWf4Z0Ipo/hqdefault.jpg" alt="Video Thumbnail">
+                            <div class="play-button"></div>
                         </div>
-
                         <div class="card-body">
                             <h6>SUCCESSFUL REPAIR OF NO POWER ISSUE☄️</h6>
                             <p class="text-muted card-text">
@@ -695,21 +716,16 @@
                         </div>
                     </div>
                 </div>
-
-
+                
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                     <div class="card border-0 transform-on-hover">
-                        <!-- YouTube Embedded Video -->
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/czrIQDzq6Is?si=UYHA01suPoT3OQYm"
-                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
+                        <!-- Lazy Loaded YouTube Video -->
+                        <div class="video-container" onclick="loadVideo(this, 'czrIQDzq6Is')">
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/czrIQDzq6Is/hqdefault.jpg" alt="Video Thumbnail">
+                            <div class="play-button"></div>
                         </div>
-
                         <div class="card-body">
-                            <h6> SUCCESSFUL REPAIR OF NO POWER ISSUE☄️</h6>
+                            <h6>SUCCESSFUL REPAIR OF NO POWER ISSUE☄️</h6>
                             <p class="text-muted card-text">
                                 💻 ACER NITRO 5 <br>
                                 🔧 REPLACED AND UPGRADED PROCESSOR☄️ <br>
@@ -1088,4 +1104,19 @@
                 fullscreen: { enabled: true, fallback: true, iosNative: true },
             });
         });
+
+
+        function loadVideo(container, videoId) {
+                        const iframe = document.createElement('iframe');
+                        iframe.setAttribute('width', '100%');
+                        iframe.setAttribute('height', '315');
+                        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+                        iframe.setAttribute('title', 'YouTube video player');
+                        iframe.setAttribute('frameborder', '0');
+                        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                        iframe.setAttribute('allowfullscreen', '');
+
+                        container.innerHTML = ''; // Remove thumbnail and play button
+                        container.appendChild(iframe);
+                    }
     </script>

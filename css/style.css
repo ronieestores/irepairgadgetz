@@ -195,7 +195,7 @@
 
 /*** Facts ***/
 .fact {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/irepair-bg-1.webp);
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/irepair-bg-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -314,7 +314,7 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/irepair-bg-2.webp) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/irepair-bg-2.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -599,4 +599,25 @@ html {
     background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/YouTube_social_white_triangle_%282017%29.svg') no-repeat center;
     background-size: contain;
     opacity: 0.8;
+}
+
+
+
+
+
+.collapse.navbar-collapse {
+    transition: none; /* Remove transition-based shifting */
+    min-height: 50px; /* Adjust based on your navbar height */
+}
+
+
+.navbar {
+    overflow: hidden;
+}
+
+
+@font-face {
+    font-family: "CustomFont";
+    src: url("fonts/my-font.woff2") format("woff2");
+    font-display: swap;
 }

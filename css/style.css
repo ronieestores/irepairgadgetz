@@ -601,7 +601,18 @@ html {
     opacity: 0.8;
 }
 
-
+video::-webkit-media-controls {
+    display: none !important;
+  }
+  
+  video::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+  
+  video::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+  
 
 
 
@@ -621,3 +632,7 @@ html {
     src: url("fonts/my-font.woff2") format("woff2");
     font-display: swap;
 }
+
+
+
+

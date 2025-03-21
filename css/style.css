@@ -621,9 +621,3 @@ html {
     src: url("fonts/my-font.woff2") format("woff2");
     font-display: swap;
 }
-
-
-p a[href^="tel"] {
-    color: white !important;
-    text-decoration: none;
-}

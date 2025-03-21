@@ -154,16 +154,3 @@ $(document).ready(function(){
     // Run height adjustment on page load
     $(window).on('load', equalizeHeights);
 });
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll(".lazy-video").forEach(el => {
-        el.addEventListener("click", function() {
-            const videoId = this.getAttribute("data-yt");
-            this.innerHTML = `<iframe width="100%" height="315"
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        });
-    });
-});

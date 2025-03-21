@@ -600,3 +600,26 @@ html {
     background-size: contain;
     opacity: 0.8;
 }
+
+
+.container {
+    min-height: 500px; /* Adjust based on actual content height */
+}
+
+
+.collapse.navbar-collapse {
+    transition: none; /* Remove transition-based shifting */
+    min-height: 50px; /* Adjust based on your navbar height */
+}
+
+
+.navbar {
+    overflow: hidden;
+}
+
+
+@font-face {
+    font-family: "CustomFont";
+    src: url("fonts/my-font.woff2") format("woff2");
+    font-display: swap;
+}

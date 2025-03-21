@@ -602,6 +602,7 @@ html {
 }
 
 
+
 .collapse.navbar-collapse {
     transition: none; /* Remove transition-based shifting */
     min-height: 50px; /* Adjust based on your navbar height */

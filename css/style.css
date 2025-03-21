@@ -594,29 +594,12 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;  /* Slightly larger for better touch interaction */
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/YouTube_social_white_triangle_%282017%29.svg') no-repeat center;
     background-size: contain;
-    opacity: 1; /* Ensure it's fully visible */
-    pointer-events: auto; /* Ensure it is clickable */
-    z-index: 10; /* Make sure it's above other elements */
+    opacity: 0.8;
 }
-
-
-video::-webkit-media-controls {
-    display: none !important;
-  }
-  
-  video::-webkit-media-controls-enclosure {
-    display: none !important;
-  }
-  
-  video::-webkit-media-controls-play-button {
-    display: none !important;
-  }
-  
-
 
 
 .collapse.navbar-collapse {

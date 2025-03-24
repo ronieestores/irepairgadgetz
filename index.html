@@ -46,61 +46,68 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
-    <style>
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            /* 16:9 Aspect Ratio */
-            cursor: pointer;
-            background: #000;
-            overflow: hidden;
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "iRepair Gadgetz",
+      "image": "https://yourwebsite.com/logo.png",
+      "@id": "https://irepairgadgetz.pages.dev",
+      "url": "https://irepairgadgetz.pages.dev",
+      "telephone": "+961 8 411 751",
+      "email": "irepairgadgetz2022@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit E, 2nd Floor, RVD Commercial BLDG, Lot 10 Blk 4, Commonwealth Avenue, Novaliches",
+        "addressLocality": "Quezon City",
+        "addressRegion": "Metro Manila",
+        "postalCode": "1121",
+        "addressCountry": "PH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 14.7075117,
+        "longitude": 121.0757715
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "17:00"
         }
-
-        .video-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+      ],
+      "service": [
+        {
+          "@type": "Service",
+          "name": "Proper Full Deep Cleaning"
+        },
+        {
+          "@type": "Service",
+          "name": "Cable Management"
+        },
+        {
+          "@type": "Service",
+          "name": "Hardware Repair"
+        },
+        {
+          "@type": "Service",
+          "name": "Free Check-up & Diagnostics"
         }
-
-        /* Play Button */
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 0, 0, 0.8);
-            /* Red background */
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background 0.3s ease-in-out;
-        }
-
-        /* Hover effect */
-        .play-button:hover {
-            background: rgba(200, 0, 0, 1);
-            /* Darker red on hover */
-        }
-
-        /* Play icon */
-        .play-button::after {
-            content: "▶";
-            font-size: 30px;
-            color: white;
-            font-weight: bold;
-            margin-left: 5px;
-        }
-    </style>
-
-
+      ],
+      "sameAs": [
+        "https://www.facebook.com/iRepairGadgetz2022",
+        "https://www.tiktok.com/@irepairgadgetz2022"
+      ]
+    }
+    </script>
+    
 </head>
 
 <body>

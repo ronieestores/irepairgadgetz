@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /sitemap_new.xml
 Sitemap: https://irepairgadgetz.pages.dev/sitemap.xml

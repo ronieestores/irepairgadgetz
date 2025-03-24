@@ -1,47 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>http://irepairgadgetz.pages.dev/index.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/img/P1.webp</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/img/P4.webp</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/img/P6.webp</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/about.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/service.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/booking.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/team.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/testimonial.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/404.html</loc>
-  <lastmod>2025-03-24</lastmod>
-</url>
-<url>
-  <loc>http://irepairgadgetz.pages.dev/contact.html</loc>
-  <lastmod>2025-03-24</lastmod>
+	<loc>https://irepairgadgetz.pages.dev/</loc>
+	<lastmod>2025-03-24T09:41:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 </urlset>

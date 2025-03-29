@@ -1126,16 +1126,14 @@
     <script>
 
 
-const observer = lozad('.lozad', {
-    load: (el) => {
-      el.src = el.dataset.src;
-      console.log('Element loaded!');
-    },
-    root: document.getElementById('root'),
-    rootMargin: '0px 0px 0px 0px',
-    threshold: 0.5,
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = lozad('.lozad', {
+      load: (el) => {
+        el.src = el.dataset.src;
+      },
+    });
+    observer.observe();
   });
-  observer.observe();
 
 
         baguetteBox.run('.cards-gallery', { animation: 'slideIn' });

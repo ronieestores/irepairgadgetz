@@ -285,7 +285,7 @@
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Your Gadgets, We
                                         Care</h1>
                                 </div>
-                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
+                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn lozad">
                                     <img src="img/motherboard.webp" class="img-fluid" width="800" height="600"
                                         alt="Motherboard Repair">
 
@@ -563,11 +563,11 @@
                                         </div>
                                         <div class="carousel-inner h-100">
                                             <div class="carousel-item active h-100">
-                                                <img class="position-absolute img-fluid w-100 h-100"
+                                                <img class="position-absolute img-fluid w-100 h-100 lozad"
                                                     src="img/cleaning1.webp" style="object-fit: cover;" alt="Image 1">
                                             </div>
                                             <div class="carousel-item h-100">
-                                                <img class="position-absolute img-fluid w-100 h-100"
+                                                <img class="position-absolute img-fluid w-100 h-100 lozad"
                                                     src="img/cleaning2.webp" style="object-fit: cover;" alt="Image 2">
                                             </div>
                                             <div class="carousel-item h-100">
@@ -792,7 +792,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'GkFFdVyBH4s')">
-                            <img class="video-thumbnail" src="https://img.youtube.com/vi/GkFFdVyBH4s/hqdefault.jpg"
+                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/GkFFdVyBH4s/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -815,7 +815,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'ceEWf4Z0Ipo')">
-                            <img class="video-thumbnail" src="https://img.youtube.com/vi/ceEWf4Z0Ipo/hqdefault.jpg"
+                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/ceEWf4Z0Ipo/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -834,7 +834,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'czrIQDzq6Is')">
-                            <img class="video-thumbnail" src="https://img.youtube.com/vi/czrIQDzq6Is/hqdefault.jpg"
+                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/czrIQDzq6Is/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -1114,7 +1114,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
     <!-- Other Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.js"></script>
@@ -1124,6 +1124,20 @@
     <script src="js/main.js"></script>
 
     <script>
+
+
+const observer = lozad('.lozad', {
+    load: (el) => {
+      el.src = el.dataset.src;
+      console.log('Element loaded!');
+    },
+    root: document.getElementById('root'),
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.5,
+  });
+  observer.observe();
+
+
         baguetteBox.run('.cards-gallery', { animation: 'slideIn' });
 
         jQuery.event.special.touchstart = {

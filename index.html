@@ -792,7 +792,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'GkFFdVyBH4s')">
-                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/GkFFdVyBH4s/hqdefault.jpg"
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/GkFFdVyBH4s/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -815,7 +815,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'ceEWf4Z0Ipo')">
-                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/ceEWf4Z0Ipo/hqdefault.jpg"
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/ceEWf4Z0Ipo/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -834,7 +834,7 @@
                     <div class="card border-0 transform-on-hover">
                         <!-- Lazy Loaded YouTube Video -->
                         <div class="video-container" onclick="loadVideo(this, 'czrIQDzq6Is')">
-                            <img class="video-thumbnail lozad" src="https://img.youtube.com/vi/czrIQDzq6Is/hqdefault.jpg"
+                            <img class="video-thumbnail" src="https://img.youtube.com/vi/czrIQDzq6Is/hqdefault.jpg"
                                 alt="Video Thumbnail">
                             <div class="play-button"></div>
                         </div>
@@ -1126,7 +1126,7 @@
     <script>
 
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const observer = lozad('.lozad', {
       load: (el) => {
         el.src = el.dataset.src;

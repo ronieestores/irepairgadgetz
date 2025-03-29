@@ -630,9 +630,3 @@ html {
 }
 
 
-/* Desktop view */
-@media (min-width: 768px) {
-    #contactus-section {
-      padding: 50px; /* Adjust padding for desktop view */
-    }
-  }

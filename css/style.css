@@ -623,3 +623,12 @@ html {
 
 
 
+.testimonial-carousel {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-item {
+    flex: 1;
+    min-height: 350px; /* adjust the height as needed */
+  }

@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="preload" as="image" href="img/irepair-bg-1.1.webp" type="image/webp">
-
+    <link rel="preload" as="image" href="img/irepair-bg-1.1.webp" type="image/webp" fetchpriority="high">
     <meta charset="utf-8">
     <title>Gadget Repair Near Me | Laptop & Phone Repair - iRepairGadgetz</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -48,7 +47,18 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
+    <script>
+        // Load non-critical CSS asynchronously
+        const nonCriticalCss = document.createElement('link');
+        nonCriticalCss.rel = 'stylesheet';
+        nonCriticalCss.href = 'css/non-critical.css';
+        document.head.appendChild(nonCriticalCss);
+      </script>
+    </head>
+    <body>
+      <!-- Defer non-critical JS -->
+      <script defer src="js/non-critical.js"></script>
+      
     <style>
         .video-container {
             position: relative;

@@ -1237,12 +1237,4 @@
             container.innerHTML = ''; // Remove thumbnail and play button
             container.appendChild(iframe);
         }
-
-        const images = document.querySelectorAll('webp');
-
-images.forEach((img, index) => {
-  if (index > 0) {
-    img.setAttribute('loading', 'lazy');
-  }
-});
     </script>

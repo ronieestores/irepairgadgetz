@@ -785,7 +785,6 @@
                 <h1 class="mb-5">Proven Expertise in Repairs</h1>
             </div>
             <div class="row">
-                <!-- Include Plyr.js CSS -->
 
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                     <div class="card border-0 transform-on-hover">
@@ -1116,7 +1115,6 @@
     <script src="https://cdn.jsdelivr.net/npm/lozad@1.15.0/dist/lozad.min.js"></script>
     <!-- Other Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.js"></script>
 
 
     <!-- Template Javascript -->
@@ -1224,15 +1222,6 @@
             }
         };
 
-
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const players = Plyr.setup('.plyr', { // Apply Plyr to all elements with class "plyr"
-                controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-                fullscreen: { enabled: true, fallback: true, iosNative: true },
-            });
-        });
 
 
         function loadVideo(container, videoId) {

@@ -1168,19 +1168,22 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             function scrollToSection(sectionId) {
-                const section = document.querySelector(sectionId);
-                if (!section) return;
+    const section = document.querySelector(sectionId);
+    if (!section) return;
 
-                const navbarHeight = document.querySelector("nav").offsetHeight;
-                const sectionMargin = parseInt(window.getComputedStyle(section).marginTop);
+    const navbarHeight = document.querySelector("nav").offsetHeight;
+    const sectionMargin = parseInt(window.getComputedStyle(section).marginTop);
 
-                window.scrollTo({
-                    top: section.offsetTop - navbarHeight - sectionMargin,
-                    behavior: "smooth"
-                });
+    const sectionRect = section.getBoundingClientRect();
+    const sectionTop = sectionRect.top + window.scrollY;
 
-                closeNavbar(); // Close navbar after scrolling
-            }
+    window.scrollTo({
+        top: sectionTop - navbarHeight - sectionMargin,
+        behavior: "smooth"
+    });
+
+    closeNavbar(); // Close navbar after scrolling
+}
 
             // Scroll to Home (Top of Page) and Close Navbar
             document.querySelector(".nav-item.nav-link.active").addEventListener("click", function (event) {
